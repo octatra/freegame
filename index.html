@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Gratis - Mainkan Game Favoritmu</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="#" class="brand">
+            <i class="bi bi-controller"></i>
+            <span>Game Gratis</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+            <i class="bi bi-list"></i>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#" class="nav-link active">
+                <i class="bi bi-house-door-fill"></i> Beranda
+            </a>
+            <a href="#daftar-game" class="nav-link">
+                <i class="bi bi-controller"></i> Game
+            </a>
+            <a href="#pengaturan" class="nav-link" id="settingsLink">
+                <i class="bi bi-gear-fill"></i> Pengaturan
+            </a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-icon">
+                <i class="bi bi-controller"></i>
+            </div>
+
+            <div class="hero-content">
+                <span class="hero-label">PLAY • HAVE FUN • REPEAT</span>
+                <h1>Ayok Main Game Gratis</h1>
+                <p>Pilih game favoritmu dan nikmati keseruannya!</p>
+            </div>
+
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="game-section" id="daftar-game">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Jelajahi Game</h2>
+                    <p>Temukan permainan seru untuk mengisi waktu luangmu.</p>
+                </div>
+
+                <span class="game-count" id="gameCount">8 Game</span>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="toolbar">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Cari game favoritmu..."
+                        aria-label="Cari game">
+                    <button id="clearSearch" class="clear-search" hidden
+                            aria-label="Hapus pencarian">
+                        <i class="bi bi-x-circle-fill"></i>
+                    </button>
+                </div>
+
+                <select id="categoryFilter" aria-label="Filter kategori">
+                    <option value="all">Semua Kategori</option>
+                    <option value="Platformer">Platformer</option>
+                    <option value="Simulasi">Simulasi</option>
+                    <option value="Shoot 'em Up">Shoot 'em Up</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Balapan">Balapan</option>
+                    <option value="RPG">RPG</option>
+                </select>
+            </div>
+
+            <!-- Game Cards -->
+            <div class="game-grid" id="gameGrid">
+
+                <article class="game-card"
+                    data-title="Adventure Pixel"
+                    data-category="Platformer"
+                    data-image="images/adventure-pixel.jpg"
+                    data-url="games/adventure-pixel/index.html">
+
+                    <div class="game-image image-adventure">
+                        <img src="Rifki.png"
+                             alt="Adventure Pixel"
+                             loading="lazy">
+                        <span class="image-emoji">🗺️</span>
+                        <span class="image-tag">PETUALANGAN</span>
+                    </div>
+
+                    <div class="game-info">
+                        <h3>Fluppy Pou</h3>
+                        <span class="genre">Platformer</span>
+                        <p>Jelajahi dunia, kumpulkan koin, dan selesaikan setiap tantangan!</p>
+                        <button class="play-button" data-play>
+                            <i class="bi bi-play-circle-fill"></i> Mainkan
+                        </button>
+                    </div>
+                </article>
+
+                <article class="game-card"
+                    data-title="Farm Life"
+                    data-category="Simulasi"
+                    data-image="images/farm-life.jpg"
+                    data-url="games/farm-life/index.html">
+
+                    <div class="game-image image-farm">
+                        <img src="Tina.png"
+                             alt="Farm Life" loading="lazy">
+                        <span class="image-emoji">🌻</span>
+                        <span class="image-tag">SANTAI</span>
+                    </div>
+
+                    <div class="game-info">
+                        <h3>Food Hatsune Miku</h3>
+                        <span class="genre">Simulasi</span>
+                        <p>Kelola kebunmu, rawat tanaman, dan bangun peternakan impian!</p>
+                        <button class="play-button" data-play>
+                            <i class="bi bi-play-circle-fill"></i> Mainkan
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <i class="bi bi-controller"></i>
+                <h3>Game tidak ditemukan</h3>
+                <p>Coba gunakan kata kunci atau kategori lain.</p>
+                <button id="resetFilter" class="reset-button">
+                    Tampilkan Semua Game
+                </button>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <div class="footer-brand">
+                <i class="bi bi-controller"></i>
+                Game Gratis
+            </div>
+            <p>Temukan keseruan dalam setiap permainan.</p>
+            <span>© <span id="currentYear"></span> Game Gratis</span>
+        </footer>
+
+    </main>
+
+    <!-- Settings Dialog -->
+    <dialog id="settingsDialog" class="settings-dialog">
+        <div class="dialog-header">
+            <h2>Pengaturan</h2>
+            <button id="closeSettings" class="icon-button"
+                    aria-label="Tutup pengaturan">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+
+        <label class="setting-option">
+            <span>
+                <strong>Mode gelap</strong>
+                <small>Ubah tampilan menjadi lebih gelap.</small>
+            </span>
+            <input type="checkbox" id="darkModeToggle">
+        </label>
+
+        <button id="saveSettings" class="play-button">Selesai</button>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
